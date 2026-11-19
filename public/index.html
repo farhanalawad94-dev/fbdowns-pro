@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FBDowns.pro | أسرع موقع لتحميل فيديوهات فيسبوك بجودة HD مجاناً</title>
+  <meta name="description" content="أفضل موقع مجاني لتحميل فيديوهات فيسبوك، ريلز (Reels)، والقصص (Stories) بجودة عالية Full HD و MP4 بدون علامة مائية وبأعلى سرعة.">
+  <meta name="keywords" content="تحميل فيديو من فيسبوك, تنزيل فيديو فيسبوك, تحميل ريلز فيسبوك, facebook video downloader, fbdowns">
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231877F2'><path d='M12 2C6.48 2 2 6.48 2 12c0 5 3.66 9.14 8.44 9.88v-6.99h-2.54V12h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.14 22 17 22 12c0-5.52-4.48-10-10-10z'/></svg>">
+  
+  <!-- Google Fonts: Readex Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #080c16;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --border-glow: rgba(24, 119, 242, 0.4);
+      --primary: #1877f2;
+      --primary-hover: #166fe5;
+      --accent-cyan: #00f2fe;
+      --accent-purple: #8b5cf6;
+      --accent-green: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(24, 119, 242, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(0, 242, 254, 0.1) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8, 12, 22, 0.8);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(24, 119, 242, 0.4);
+    }
+
+    .brand-icon svg {
+      width: 26px;
+      height: 26px;
+      fill: white;
+    }
+
+    .brand-badge {
+      font-size: 0.75rem;
+      background: rgba(24, 119, 242, 0.2);
+      border: 1px solid rgba(24, 119, 242, 0.4);
+      color: var(--accent-cyan);
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent-cyan) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    /* Search Box */
+    .downloader-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(16px);
+      max-width: 760px;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .downloader-card:focus-within {
+      border-color: var(--border-glow);
+      box-shadow: 0 20px 50px -10px rgba(24, 119, 242, 0.25);
+    }
+
+    .input-form {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .input-wrapper {
+      flex: 1;
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-width: 280px;
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 18px;
+      width: 22px;
+      height: 22px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .url-input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 16px 52px 16px 90px;
+      color: white;
+      font-size: 1.05rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .url-input:focus {
+      border-color: var(--primary);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .url-input::placeholder {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .paste-btn {
+      position: absolute;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .paste-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+    }
+
+    .submit-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, #166fe5 100%);
+      color: white;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(24, 119, 242, 0.4);
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(24, 119, 242, 0.55);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Result Card */
+    .result-section {
+      display: none;
+      margin-top: 36px;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .result-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      text-align: right;
+    }
+
+    .thumb-wrapper {
+      position: relative;
+      width: 220px;
+      height: 140px;
+      border-radius: 14px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #1e293b;
+    }
+
+    .thumb-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    .result-info {
+      flex: 1;
+    }
+
+    .result-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      line-height: 1.5;
+      color: #f1f5f9;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .download-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .dl-btn {
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .dl-btn-hd {
+      background: linear-gradient(135deg, var(--accent-green), #059669);
+      color: white;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    }
+
+    .dl-btn-hd:hover {
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .dl-btn-sd {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid var(--border-color);
+    }
+
+    .dl-btn-sd:hover {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translateY(-2px);
+    }
+
+    /* Error Message */
+    .error-box {
+      display: none;
+      margin-top: 20px;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Features Section */
+    .section-title {
+      text-align: center;
+      margin: 80px 0 40px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: white;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      background: rgba(24, 119, 242, 0.15);
+      border: 1px solid rgba(24, 119, 242, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent-cyan);
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .feature-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Steps Section */
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .step-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 30px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+      color: white;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3);
+    }
+
+    .step-box h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .step-box p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* FAQ Section */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: white;
+      user-select: none;
+    }
+
+    .faq-answer {
+      padding: 0 24px 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      display: none;
+    }
+
+    .faq-item.active {
+      border-color: var(--border-glow);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 50px 0 30px;
+      border-top: 1px solid var(--border-color);
+      background: rgba(8, 12, 22, 0.9);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .footer-desc {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 0.8s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-title { font-size: 2rem; }
+      .result-card { flex-direction: column; text-align: center; }
+      .thumb-wrapper { width: 100%; height: 200px; }
+      .download-actions { justify-content: center; }
+      .steps-container { grid-template-columns: 1fr; }
+      .input-wrapper { min-width: 100%; }
+      .submit-btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="/" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 5 3.66 9.14 8.44 9.88v-6.99h-2.54V12h2.54V9.8c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.14 22 17 22 12c0-5.52-4.48-10-10-10z"/></svg>
+        </div>
+        <span>FBDowns</span>
+        <span class="brand-badge">PRO</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#how-to" class="nav-link">كيفية التحميل</a>
+        <a href="#features" class="nav-link">المميزات</a>
+        <a href="#faq" class="nav-link">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero & Downloader Section -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-tag">
+        <span>⚡ تنزيل فوري بأعلى جودة</span>
+        <span>•</span>
+        <span>100% مجاناً</span>
+      </div>
+      <h1 class="hero-title">
+        أفضل موقع لتحميل فيديوهات فيسبوك <span>بجودة HD</span>
+      </h1>
+      <p class="hero-desc">
+        قم بتنزيل مقاطع الفيديو، الريلز (Reels)، والقصص من فيسبوك بأعلى دقة MP4 مباشرة على جهازك بسرعة فائقة وبدون علامة مائية.
+      </p>
+
+      <!-- Input Card -->
+      <div class="downloader-card">
+        <form class="input-form" id="downloadForm">
+          <div class="input-wrapper">
+            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <input 
+              type="text" 
+              class="url-input" 
+              id="videoUrl" 
+              placeholder="ضع رابط فيديو فيسبوك هنا (مثال: https://www.facebook.com/...)" 
+              required
+              autocomplete="off"
+            >
+            <button type="button" class="paste-btn" id="pasteBtn" title="لصق من الحافظة">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>لصق</span>
+            </button>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="spinner" id="spinner"></span>
+            <span id="btnText">تحميل الآن</span>
+            <svg id="btnIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </button>
+        </form>
+
+        <div class="error-box" id="errorBox"></div>
+      </div>
+
+      <!-- Result Section -->
+      <div class="result-section" id="resultSection">
+        <div class="result-card">
+          <div class="thumb-wrapper">
+            <img id="resThumb" src="" alt="صورة الفيديو">
+            <span class="thumb-badge">MP4 HD</span>
+          </div>
+          <div class="result-info">
+            <h3 class="result-title" id="resTitle">عنوان الفيديو</h3>
+            <div class="download-actions">
+              <a href="#" class="dl-btn dl-btn-hd" id="hdDownloadBtn" target="_blank" download>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>تحميل جودة عالية (HD MP4)</span>
+              </a>
+              <a href="#" class="dl-btn dl-btn-sd" id="sdDownloadBtn" target="_blank" download>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>تحميل جودة عادية (SD MP4)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Download Steps -->
+    <section id="how-to">
+      <div class="section-title">
+        <h2>طريقة تحميل الفيديو في 3 خطوات</h2>
+        <p>عملية سهلة وسريعة للغاية لا تتطلب أكثر من 10 ثوانٍ</p>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <h3>انسخ الرابط</h3>
+          <p>افتح تطبيق أو موقع فيسبوك، اضغط على زر "مشاركة" ثم اختر "نسخ الرابط".</p>
+        </div>
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <h3>الصق في المربع</h3>
+          <p>ضع الرابط في مربع البحث بأعلى الموقع واضغط على زر "تحميل الآن".</p>
+        </div>
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <h3>احفظ الفيديو</h3>
+          <p>اختر الجودة المطلوبة (HD أو SD) وسيتم حفظ الفيديو في جهازك فوراً.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+      <div class="section-title">
+        <h2>لماذا تختار FBDowns.pro؟</h2>
+        <p>أفضل المزايا لتجربة تنزيل سلسة وبدون أي تعقيد</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>سرعة تحميل فائقة</h3>
+          <p>خوادم سحابية حديثة تضمن استخراج روابط الفيديو والبدء في التحميل خلال أجزاء من الثانية.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>آمن ومحمي 100%</h3>
+          <p>لا نطلب أي تسجيل دخول ولا نخزن أي سجلات أو مقاطع فيديو على خوادمنا لحماية خصوصيتك.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>يعمل على جميع الأجهزة</h3>
+          <p>متوافق بالكامل مع هواتف الآيفون، أجهزة أندرويد، الأجهزة اللوحية، وأجهزة الكمبيوتر (ويندوز وماك).</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          </div>
+          <h3>دعم ريلز وقصص فيسبوك</h3>
+          <p>يدعم تنزيل جميع أنواع مقاطع فيسبوك: الفيديوهات العامة، الريلز (Reels)، وفيديوهات المجموعات والصفحات.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <h3>مجاني تماماً وبدون حدود</h3>
+          <p>يمكنك تحميل أي عدد تريده من مقاطع الفيديو يومياً دون أي اشتراكات أو رسوم خفية.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="14.31" y1="8" x2="20.05" y2="17.94"/><line x1="9.69" y1="8" x2="21.17" y2="8"/><line x1="7.38" y1="12" x2="13.12" y2="2.06"/><line x1="9.69" y1="16" x2="3.95" y2="6.06"/><line x1="14.31" y1="16" x2="2.83" y2="16"/><line x1="16.62" y1="12" x2="10.88" y2="21.94"/></svg>
+          </div>
+          <h3>أعلى دقة متوفرة (1080p)</h3>
+          <p>نحافظ على الجودة الأصلية للفيديو لنوفر لك أعلى دقة تصدير ممكنة مع صوت واضح ونقي.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="section-title">
+        <h2>الأسئلة الأكثر شيوعاً</h2>
+        <p>إجابات سريعة على أبرز التساؤلات حول استخدام الموقع</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هل الموقع مجاني تماماً؟</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            نعم، موقع FBDowns.pro مجاني 100% ولا يتطلب أي رسوم أو تسجيل حساب، ويمكنك استخدامه لتحميل ما تشاء من مقاطع الفيديو.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>كيف يمكنني تحميل فيديو فيسبوك على هاتف آيفون (iOS)؟</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            استخدم متصفح Safari، الصق رابط الفيديو هنا، اضغط على زر التحميل، ثم اختر "تنزيل". ستجد الفيديو في مجلد "التنزيلات" بتطبيق الملفات (Files)، ويمكنك حفظه في ألبوم الكاميرا بسهولة.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>أين يتم حفظ مقاطع الفيديو بعد تحميلها؟</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            يتم حفظ المقاطع تلقائياً في مجلد "Downloads" (التنزيلات) الافتراضي في جهاز الكمبيوتر أو الهاتف الذكي.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>هل يمكنني تحميل مقاطع الريلز (Facebook Reels)؟</span>
+            <span>+</span>
+          </div>
+          <div class="faq-answer">
+            نعم بالتأكيد! يدعم موقعنا مقاطع الريلز بالكامل وبنفس الجودة العالية الأصلية.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer-desc">
+        FBDowns.pro هي أداة سريعة ومجانية لتحميل مقاطع الفيديو العامة من فيسبوك. نحن لا نستضيف أي محتوى محمي بحقوق الطبع والنشر على خوادمنا. جميع الحقوق تعود لأصحاب المحتوى الأصليين على منصة Facebook.
+      </p>
+      <p>© 2026 FBDowns.pro - جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Paste Clipboard Helper
+    const pasteBtn = document.getElementById('pasteBtn');
+    const videoUrlInput = document.getElementById('videoUrl');
+    const downloadForm = document.getElementById('downloadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('spinner');
+    const btnText = document.getElementById('btnText');
+    const btnIcon = document.getElementById('btnIcon');
+    const resultSection = document.getElementById('resultSection');
+    const errorBox = document.getElementById('errorBox');
+    const resThumb = document.getElementById('resThumb');
+    const resTitle = document.getElementById('resTitle');
+    const hdDownloadBtn = document.getElementById('hdDownloadBtn');
+    const sdDownloadBtn = document.getElementById('sdDownloadBtn');
+
+    pasteBtn.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        if (text) {
+          videoUrlInput.value = text;
+          videoUrlInput.focus();
+        }
+      } catch (err) {
+        videoUrlInput.focus();
+      }
+    });
+
+    // Form Submission
+    downloadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const url = videoUrlInput.value.trim();
+
+      if (!url) return;
+
+      // Loading state
+      submitBtn.disabled = true;
+      spinner.style.display = 'inline-block';
+      btnIcon.style.display = 'none';
+      btnText.innerText = 'جاري الفحص...';
+      errorBox.style.display = 'none';
+      resultSection.style.display = 'none';
+
+      try {
+        const response = await fetch('/api/info', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+          throw new Error(data.message || 'تعذر جلب الفيديو. يرجى التحقق من الرابط والتأكد من أنه عام (Public).');
+        }
+
+        // Render Result
+        resTitle.innerText = data.title || 'فيديو فيسبوك مميز';
+        resThumb.src = data.thumbnail || 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600';
+
+        // Set download proxy URLs
+        const titleParam = encodeURIComponent(data.title || 'fbdowns');
+        if (data.hdUrl) {
+          hdDownloadBtn.href = `/api/download?url=${encodeURIComponent(data.hdUrl)}&title=${titleParam}&quality=HD`;
+          hdDownloadBtn.style.display = 'inline-flex';
+        } else {
+          hdDownloadBtn.style.display = 'none';
+        }
+
+        if (data.sdUrl) {
+          sdDownloadBtn.href = `/api/download?url=${encodeURIComponent(data.sdUrl)}&title=${titleParam}&quality=SD`;
+          sdDownloadBtn.style.display = 'inline-flex';
+        } else {
+          sdDownloadBtn.style.display = 'none';
+        }
+
+        resultSection.style.display = 'block';
+        resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+      } catch (err) {
+        errorBox.innerText = err.message || 'حدث خطأ غير متوقع أثناء معالجة الرابط.';
+        errorBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        spinner.style.display = 'none';
+        btnIcon.style.display = 'inline-block';
+        btnText.innerText = 'تحميل الآن';
+      }
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+        const icon = q.querySelector('span:last-child');
+        icon.innerText = item.classList.contains('active') ? '−' : '+';
+      });
+    });
+  </script>
+</body>
+</html>
